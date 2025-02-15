@@ -1,0 +1,38 @@
+---
+import SirusFlowchart from "@/components/Animated";
+import SectionTitle from "@/components/SectionTitle.astro";
+import type { ServicesData } from "@/config/landing.interface";
+
+interface Props {
+  data: ServicesData;
+}
+
+const { data } = Astro.props;
+---
+
+<section class="w-full mt-20 md:mt-20 xl:mt-40 2xl:mt-40 bg-transparent">
+	<div class="max-w-6xl mx-auto px-6 md:px-12 bg-transparent">
+		<SectionTitle class="relative z-10">
+			<h2 class="mx-auto max-w-xl text-center text-4xl font-medium tracking-tight text-gray-900 sm:text-6xl">
+				{data.title}
+			</h2>
+		</SectionTitle>
+
+		
+		<div class="flex flex-col 2xl:flex-row gap-20 mt-10">
+			<div class="relative pr-16 md:pr-32 lg:pr-40 xl:pr-60 z-0 w-full 2xl:w-3/6 2xl:px-0 2xl:py-0 flex justify-center items-center mx-auto 2xl:mx-0">
+				<SirusFlowchart client:load />
+			</div>
+
+		
+			<div class="w-full md:w-1/2 hidden 2xl:block 2xl:ml-24 p-6 bg-white rounded-lg shadow-sm">
+				<ul class="text-gray-700 mt-5 text-2xl list-disc list-inside">
+					<li>Seamlessly connect databases with Sirus</li> <br>
+					<li>Convert big data to big decisions with AI</li> <br>
+					<li>Sirus tells you <span class="italic font-bold">what they mean and what to do next.</span></li>
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+</section>

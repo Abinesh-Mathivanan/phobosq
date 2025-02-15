@@ -1,0 +1,93 @@
+---
+import Action from "@/components/Action.astro";
+import type { HeaderData } from "@/config/landing.interface";
+
+interface Props {
+  data: HeaderData;
+}
+
+const { data } = Astro.props;
+---
+
+<header
+  id="navbar"
+  class="w-full fixed top-0 left-0 h-20 z-50 bg-transparent transition duration-300"
+>
+  <nav class="flex items-center justify-between w-3/4 mx-auto h-full">
+    <!-- Logo -->
+    <div class="text-nowrap">
+      <Action as="a" class="text-xl" href="#">
+        {data.logo}
+      </Action>
+    </div>
+
+    <ul class="hidden md:flex flex-row justify-center gap-x-14">
+      {
+        data.links.map((item) => (
+          <li class="text-lg">
+            <Action as="a" href={item.href}>
+              {item.label}
+            </Action>
+          </li>
+        ))
+      }
+    </ul>
+
+    <button id="menu-btn" class="md:hidden text-3xl">
+      ☰
+    </button>
+  </nav>
+
+  <div
+    id="mobile-menu"
+    class="fixed top-20 left-0 w-full bg-white shadow-md hidden flex-col items-center py-4"
+  >
+    {
+      data.links.map((item) => (
+        <a class="py-2 text-lg hover:opacity-80" href={item.href}>
+          {item.label}
+        </a>
+      ))
+    }
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn?.addEventListener("click", () => {
+    if (mobileMenu) {
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden");
+        mobileMenu.classList.add("flex");
+      } else {
+        mobileMenu.classList.remove("flex");
+        mobileMenu.classList.add("hidden");
+      }
+    }
+  });
+</script>
+
+
+<script>
+	let lastScrollY = window.scrollY;
+  
+	window.addEventListener("scroll", function () {
+	  const navbar = document.getElementById("navbar");
+	  if (!navbar) return;
+  
+	  const currentScrollY = window.scrollY;
+  
+	  if (currentScrollY > lastScrollY && currentScrollY >= 20) {
+		navbar.classList.remove("bg-transparent");
+		navbar.classList.add("bg-white");
+	  } else if (currentScrollY < lastScrollY) {
+		navbar.classList.remove("bg-white");
+		navbar.classList.add("bg-transparent");
+	  }
+  
+	  lastScrollY = currentScrollY;
+	});
+  </script>
+  

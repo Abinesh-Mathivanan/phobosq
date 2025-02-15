@@ -1,0 +1,46 @@
+---
+import { FaLinkedin, FaTwitter } from "react-icons/fa";
+
+const socials = [
+  { label: "LinkedIn", icon: FaLinkedin, href: "https://www.linkedin.com/company/phobosq/" },
+  { label: "Twitter", icon: FaTwitter, href: "https://x.com/PhobosQ_Ai" }
+];
+---
+
+<footer id="contact" class="w-full px-8 py-12 text-black bg-transparent mt-6">
+	<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+		<div class="flex flex-col gap-2">
+			<div class="text-xl font-bold flex items-center gap-2">
+				Phobos Q
+			</div>
+			<p class="text-sm">© 2025 Phobos Q, Inc.</p>
+		</div>
+
+		<div class="flex flex-col gap-2 items-center">
+			<h4 class="text-lg font-semibold">Contact</h4>
+			<!-- <p class="text-sm">
+				<a href="tel:" class="hover:underline">Mobile: +1 234 567 890</a>
+			</p> -->
+			<p class="text-sm">
+				<a href="mailto:office@phobosq.com" class="hover:underline">Email: office@phobosq.com</a>
+			</p>
+		</div>
+
+		<div class="flex flex-col gap-3 text-right items-end">
+			<h4 class="text-lg font-semibold">Social</h4>
+			<div class="flex items-center gap-4">
+				{socials.map(({ label, icon: Icon, href }) => (
+				<a
+					href={href}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label={label}
+					class="hover:opacity-70 transition-opacity"
+				>
+					<Icon size={24} />
+				</a>
+				))}
+			</div>
+		</div>
+  </div>
+</footer>

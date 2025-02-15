@@ -1,0 +1,22 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Brands from "@/sections/Brands.astro";
+import Footer from "@/sections/Footer.astro";
+import Header from "@/sections/Header.astro";
+import Hero from "@/sections/Hero.astro";
+import Services from "@/sections/Services.astro";
+import { getLandingData } from "@/services/data.service";
+
+const data = await getLandingData();
+---
+
+<Layout meta={data.meta}>
+  <Header data={data.headerData} />
+  <main class="flex flex-col justify-center items-center scroll-smooth">
+    <div class="w-3/4">
+      <Hero data={data.heroData} />
+      <Services data={data.servicesData} />
+	  <Brands data={data.brandsData} />
+      <Footer data={data.footerData} />
+	</main>
+</Layout>

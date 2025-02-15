@@ -1,0 +1,152 @@
+---
+import {
+  SiSnowflake,
+  SiAmazonredshift,
+  SiMongodb,
+  SiPostgresql,
+  SiMysql,
+  SiOracle,
+  SiApachecassandra,
+  SiElasticsearch,
+  SiRedis,
+  SiNeo4J,
+  SiFirebase,
+  SiAmazondynamodb,
+  SiCockroachlabs,
+  SiGraphql,
+  SiDatabricks,
+  SiSplunk,
+  SiTableau,
+  SiApachespark,
+  SiApachehadoop,
+  SiApachehive,
+  SiPrometheus,
+  SiGrafana,
+  SiKibana,
+} from 'react-icons/si';
+
+const companies = [
+  { name: 'MongoDB', icon: SiMongodb, color: '#00ED64' },
+  { name: 'Apache Cassandra', icon: SiApachecassandra, color: '#1287B1' },
+  { name: 'PostgreSQL', icon: SiPostgresql, color: '#336791' },
+  { name: 'MySQL', icon: SiMysql, color: '#4479A1' },
+  { name: 'Oracle', icon: SiOracle, color: '#F80000' },
+  { name: 'Redis', icon: SiRedis, color: '#DC382D' },
+  { name: 'Neo4J', icon: SiNeo4J, color: '#008CC1' },
+  { name: 'Elasticsearch', icon: SiElasticsearch, color: '#005571' },
+  { name: 'Amazon Redshift', icon: SiAmazonredshift, color: '#FF4F8B' },
+  { name: 'Snowflake', icon: SiSnowflake, color: '#29B5E8' },
+  { name: 'Firebase', icon: SiFirebase, color: '#FFCA28' },
+  { name: 'DynamoDB', icon: SiAmazondynamodb, color: '#4053D6' },
+  { name: 'CockroachDB', icon: SiCockroachlabs, color: '#6933FF' },
+  { name: 'GraphQL', icon: SiGraphql, color: '#E10098' },
+  { name: 'Databricks', icon: SiDatabricks, color: '#FF3621' },
+  { name: 'Splunk', icon: SiSplunk, color: '#000000' },
+  { name: 'Tableau', icon: SiTableau, color: '#E97627' },
+  { name: 'Apache Spark', icon: SiApachespark, color: '#E25A1C' },
+  { name: 'Apache Hadoop', icon: SiApachehadoop, color: '#66CCFF' },
+  { name: 'Apache Hive', icon: SiApachehive, color: '#FDEE21' },
+  { name: 'Prometheus', icon: SiPrometheus, color: '#E6522C' },
+  { name: 'Grafana', icon: SiGrafana, color: '#F46800' },
+  { name: 'Kibana', icon: SiKibana, color: '#005571' },
+];
+
+
+const firstLine = companies.slice(0, 8);
+const secondLine = companies.slice(8, 16);
+const thirdLine = companies.slice(16);
+
+---
+
+<section class="py-16 sm:py-20 mt-16">
+	<div class="mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+	  <div class="flex flex-col items-center gap-12 lg:gap-20">
+		<h2 class="mx-auto max-w-xl text-center text-4xl font-medium tracking-tight text-gray-900 sm:text-6xl">
+		  Supports wide range of integrations
+		</h2>
+  
+		<div class="overflow-hidden w-full">
+		
+		  <div class="relative marquee-container">
+			<div class="marquee-content">
+			  {[...firstLine, ...firstLine, ...firstLine].map((company, index) => (
+				<div data-key={`line1-${index}`} class="inline-flex items-center mx-8">
+				  <company.icon style={{ color: company.color }} className="h-12 w-12" />
+				  <span class="ml-2 text-lg font-medium text-gray-900">{company.name}</span>
+				</div>
+			  ))}
+			</div>
+		  </div>
+  
+		  <div class="relative marquee-container mt-8">
+			<div class="marquee-content" style={{ animationDuration: '80s' }}>
+			  {[...secondLine, ...secondLine, ...secondLine].map((company, index) => (
+				<div data-key={`line2-${index}`} class="inline-flex items-center mx-8">
+				  <company.icon style={{ color: company.color }} className="h-12 w-12" />
+				  <span class="ml-2 text-lg font-medium text-gray-900">{company.name}</span>
+				</div>
+			  ))}
+			</div>
+		  </div>
+  
+		  <div class="relative marquee-container mt-8">
+			<div class="marquee-content" style={{ animationDuration: '65s' }}>
+			  {[...thirdLine, ...thirdLine, ...thirdLine].map((company, index) => (
+				<div data-key={`line3-${index}`} class="inline-flex items-center mx-8">
+				  <company.icon style={{ color: company.color }} className="h-12 w-12" />
+				  <span class="ml-2 text-lg font-medium text-gray-900">{company.name}</span>
+				</div>
+			  ))}
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+  
+  <style>
+	.marquee-container {
+	  width: 100%;
+	  overflow: hidden;
+	  white-space: nowrap;
+	  position: relative;
+	  -webkit-mask-image: linear-gradient(
+		to right, 
+		transparent, 
+		black 5%, 
+		black 95%, 
+		transparent
+	  );
+	  mask-image: linear-gradient(
+		to right, 
+		transparent, 
+		black 5%, 
+		black 95%, 
+		transparent
+	  );
+	}
+  
+	.marquee-content {
+	  display: inline-block;
+	  white-space: nowrap;
+	  animation: smoothScroll 70s linear infinite;
+	  transform: translateZ(0);
+	  will-change: transform;
+	}
+  
+	@keyframes smoothScroll {
+	  from {
+		transform: translateX(0);
+	  }
+	  to {
+		transform: translateX(-33.33%);
+	  }
+	}
+  
+	@media (prefers-reduced-motion: reduce) {
+	  .marquee-content {
+		animation: none;
+		transform: none;
+	  }
+	}
+  </style>
