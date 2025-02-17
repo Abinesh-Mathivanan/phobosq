@@ -12,14 +12,56 @@ import {
 } from "react-icons/si";
 
 const nodes = [
-  { id: 1, label: "Public Data\nGoogle Sheets", x: 40, y: 50, icons: [<SiGooglesheets size={24} key="sheets-icon" color="#34A853" />] },
-  { id: 2, label: "Unstructured Data\nRedis, Kafka", x: 40, y: 150, icons: [<SiRedis size={24} key="redis-icon" color="#DC382D" />] },
-  { id: 3, label: "System Data\nAWS, SQL Server", x: 40, y: 250, icons: [<SiAmazon size={24} key="aws-icon" color="#FF9900" />] },
+  {
+    id: 1,
+    label: "Public Data\nGoogle Sheets",
+    x: 40,
+    y: 50,
+    icons: [<SiGooglesheets size={24} color="#34A853" />],
+  },
+  {
+    id: 2,
+    label: "Unstructured Data\nRedis, Kafka",
+    x: 40,
+    y: 150,
+    icons: [<SiRedis size={24} color="#DC382D" />],
+  },
+  {
+    id: 3,
+    label: "System Data\nAWS, SQL Server",
+    x: 40,
+    y: 250,
+    icons: [<SiAmazon size={24} color="#FF9900" />],
+  },
   { id: "center", label: "SIRUS\nIntegrated with Q-Engine", x: 240, y: 150, icons: [] },
-  { id: 4, label: "Predictive Analytics\nGrafana", x: 440, y: 25, icons: [<SiGrafana size={24} key="grafana-icon" color="#F46800" />] },
-  { id: 5, label: "Strategy Engine\nTableau", x: 440, y: 125, icons: [<SiTableau size={24} key="tableau-icon" color="#E2231A" />] },
-  { id: 6, label: "Smart Dashboards\nPower BI, Kibana", x: 440, y: 225, icons: [<SiKibana size={24} key="kibana-icon" color="#00BFB3" />] },
-  { id: 7, label: "AI Assistant\nGoogle Analytics", x: 440, y: 325, icons: [<SiGoogleanalytics size={24} key="analytics-icon" color="#E37400" />] },
+  {
+    id: 4,
+    label: "Predictive Analytics\nGrafana",
+    x: 440,
+    y: 25,
+    icons: [<SiGrafana size={24} color="#F46800" />],
+  },
+  {
+    id: 5,
+    label: "Strategy Engine\nTableau",
+    x: 440,
+    y: 125,
+    icons: [<SiTableau size={24} color="#E2231A" />],
+  },
+  {
+    id: 6,
+    label: "Smart Dashboards\nPower BI, Kibana",
+    x: 440,
+    y: 225,
+    icons: [<SiKibana size={24} color="#00BFB3" />],
+  },
+  {
+    id: 7,
+    label: "AI Assistant\nGoogle Analytics",
+    x: 440,
+    y: 325,
+    icons: [<SiGoogleanalytics size={24} color="#E37400" />],
+  },
 ];
 
 const connections = [

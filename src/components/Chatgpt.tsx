@@ -170,7 +170,7 @@ const ChatGPTMultiLineAnimation: React.FC = () => {
                     );
                   })}
                   <path
-                    d="M30 120 L80 95 L130 80 L180 65 L230 60 L280 50"
+                    d="M30 120 L80 95 L130 80 L180 65 L230 70 L280 55"
                     stroke="#F87171"
                     strokeWidth="2.5"
                     fill="none"
@@ -184,7 +184,7 @@ const ChatGPTMultiLineAnimation: React.FC = () => {
                     className="chart-line"
                   />
                   <path
-                    d="M30 110 L80 100 L130 90 L180 75 L230 70 L280 55"
+                    d="M30 110 L80 100 L130 90 L180 75 L230 70 L280 50"
                     stroke="#60A5FA"
                     strokeWidth="2.5"
                     fill="none"
