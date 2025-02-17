@@ -1,5 +1,6 @@
 ---
 import ChatGPTMultiLineAnimation from "@/components/Chatgpt";
+import WaitlistForm from "@/components/Waitlist";
 
 interface Props {
   data: {
@@ -14,38 +15,22 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-
 <section id="hero-section" class="flex flex-col items-center mt-60 px-4">
   <div class="w-full max-w-3xl text-center">
     <h1 class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-semibold">
-		{data.title}
-		<span class="text-primary">{data.highlightedTitle}</span>
+      {data.title}
+      <span class="text-primary">{data.highlightedTitle}</span>
     </h1>
     <h2 class="mt-10 text-xl sm:text-xl md:text-2xl lg:text-4xl opacity-80">
       {data.subTitle}
     </h2>
     <div class="flex justify-center mt-24 items-center mr-10">
-      
-      <form method="POST" action="/" class="flex">
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          class="px-4 py-3 rounded-l-md border border-gray-300 focus:outline-none"
-          required
-        />
-        <button
-          type="submit"
-          class="bg-black text-white px-6 py-3 rounded-r-md"
-        >
-          {data.primaryCta}
-        </button>
-      </form>
+      <!-- Use the client-side form component -->
+      <WaitlistForm client:load />
     </div>
   </div>
 </section>
 
-
 <section id="chatgpt-section" class="flex justify-center mt-32 w-full">
-  	<ChatGPTMultiLineAnimation client:visible />
+  <ChatGPTMultiLineAnimation client:visible />
 </section>
