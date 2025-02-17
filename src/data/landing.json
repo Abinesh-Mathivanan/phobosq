@@ -1,41 +1,63 @@
 {
-  "meta": {
-    "title": "phobosq",
-    "description": "nothing to describe",
-    "lang": "en",
-    "charset": "UTF-8",
-    "ldJson": {
-      "@context": "",
-      "@type": "Organization",
-      "name": "phobosq",
-      "description": "listen to the voice of data",
-      "url": "https://www.phobosq.com",
-      "logo": "./public/favicon.svg",
-      "contactPoint": {
-        "@type": "email",
-        "email": "office@phobosq.com",
-        "contactType": "product"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/phobosq/",
-        "https://x.com/PhobosQ_Ai"
-      ]
-    }
-  },
-  "headerData": {
-    "logo": "Phobos Q",
-    "links": [
-      { "label": "Home", "href": "#" },
-	  { "label": "Contact", "href": "#contact"}
-    ]
-  },
-  "heroData": {
-    "title": "Meet",
-    "subTitle": "Your Personal AI Data Scientist",
-    "primaryCta": "Join Waitlist",
-    "highlightedTitle": "Sirus Intelligence"
-  },
-  "servicesData": {
-    "title": "Turn Data into Actionable Insights"
+	"meta": {
+	  "title": "phobosq",
+	  "description": "nothing to describe",
+	  "lang": "en",
+	  "charset": "UTF-8",
+	  "ldJson": {
+		"@context": "",
+		"@type": "Organization",
+		"name": "phobosq",
+		"description": "listen to the voice of data",
+		"url": "https://www.phobosq.com",
+		"logo": "./public/favicon.svg",
+		"contactPoint": {
+		  "@type": "email",
+		  "email": "office@phobosq.com",
+		  "contactType": "product"
+		},
+		"sameAs": [
+		  "https://www.linkedin.com/company/phobosq/",
+		  "https://x.com/PhobosQ_Ai"
+		]
+	  }
+	},
+	"headerData": {
+	  "logo": "Phobos Q",
+	  "links": [
+		{ "label": "Home", "href": "#" },
+		{ "label": "Contact", "href": "#contact" }
+	  ]
+	},
+	"heroData": {
+	  "title": "Meet",
+	  "subTitle": "Your Personal AI Data Scientist",
+	  "primaryCta": "Join Waitlist",
+	  "secondaryCta": "",
+	  "highlightedTitle": "Sirus Intelligence"
+	},
+	"servicesData": {
+	  "title": "Turn Data into Actionable Insights",
+	  "services": []
+	},
+	"adventajesData": {
+	  "title": "",
+	  "adventajes": []
+	},
+	"brandsData": {
+	  "title": "",
+	  "description": "",
+	  "brands": []
+	},
+	"pricingData": {
+	  "title": "",
+	  "tiers": []
+	},
+	"footerData": {
+	  "logo": "",
+	  "description": "",
+	  "links": [],
+	  "socials": []
+	}
   }
-}
+  
